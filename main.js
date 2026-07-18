@@ -49,7 +49,7 @@
     function paint() {
       var dark = root.getAttribute("data-theme") === "dark";
       // The button offers the theme you'd switch to, not the one you're in.
-      button.textContent = dark ? "Light" : "Dark";
+      button.textContent = dark ? "☀️" : "🌙";
       button.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
       button.setAttribute("aria-pressed", String(dark));
       if (meta) meta.setAttribute("content", dark ? "#101317" : "#F6F5F1");
