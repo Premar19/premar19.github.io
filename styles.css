@@ -121,16 +121,17 @@ button:focus-visible {
 
 .theme-toggle {
   font-family: var(--mono);
-  font-size: 0.8rem;
   letter-spacing: 0.04em;
   color: var(--slate);
   background: none;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 5px 12px;
   margin-left: 22px;
   cursor: pointer;
   transition: color .18s ease, border-color .18s ease;
+  font-size: 0.95rem;
+  padding: 4px 12px;
+  line-height: 1.2;
 }
 .theme-toggle:hover { color: var(--ink); border-color: var(--navy); }
 
