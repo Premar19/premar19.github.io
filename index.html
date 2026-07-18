@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prem Sharma | Full-Stack &amp; Applied-AI Engineer</title>
+<meta name="description" content="Prem Sharma is a full-stack and applied-AI engineer. Sole engineer on KidneyWise, an NHS clinical AI platform, plus multi-tenant backends and LLM reliability tooling." />
+<meta property="og:title" content="Prem Sharma — Full-Stack &amp; Applied-AI Engineer" />
+<meta property="og:description" content="Sole engineer on KidneyWise, an NHS clinical AI platform. Full-stack, applied AI, and honest engineering." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #14171C;
+    --paper: #F6F5F1;
+    --navy: #1E3A5F;
+    --navy-bright: #2C5488;
+    --teal: #17726B;
+    --slate: #5A616B;
+    --line: #E3E1D9;
+    --card: #FBFAF7;
+    --display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+
+  a { color: var(--navy); text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; border-radius: 2px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 18px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 26px 0 0;
+  }
+  .mark {
+    font-family: var(--display); font-weight: 700; font-size: 1.05rem;
+    letter-spacing: 0.02em; color: var(--ink);
+  }
+  .mark .dot { color: var(--teal); }
+  .topnav a {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--slate);
+    margin-left: 22px; letter-spacing: 0.04em;
+  }
+  .topnav a:hover { color: var(--ink); }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 64px 0 0; }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.9rem, 8vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+  .thesis {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 3.2vw, 1.85rem);
+    line-height: 1.3;
+    color: var(--navy);
+    margin: 0 0 26px;
+    max-width: 22ch;
+  }
+  .lead { max-width: 60ch; color: var(--slate); margin: 0 0 30px; }
+  .lead strong { color: var(--ink); font-weight: 600; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a {
+    font-family: var(--mono); font-size: 0.82rem;
+    padding: 9px 15px; border: 1px solid var(--line);
+    border-radius: 999px; background: var(--card);
+    color: var(--ink); letter-spacing: 0.02em;
+    transition: border-color .18s ease, transform .18s ease, color .18s ease;
+  }
+  .links a:hover { border-color: var(--navy); color: var(--navy); transform: translateY(-2px); }
+
+  /* ---------- ECG signature ---------- */
+  .pulse { width: 100%; height: 58px; margin: 46px 0 8px; display: block; overflow: visible; }
+  .pulse path {
+    fill: none; stroke: var(--teal); stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 1; stroke-dashoffset: 1;
+    animation: draw 2.6s cubic-bezier(.4,0,.2,1) .35s forwards;
+    vector-effect: non-scaling-stroke;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  /* ---------- sections ---------- */
+  section { padding: 70px 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: none; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+  h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.1;
+    letter-spacing: -0.015em; margin: 0;
+  }
+  .oneliner { color: var(--slate); font-size: 1.1rem; margin: 6px 0 26px; max-width: 62ch; }
+
+  /* ---------- featured / video ---------- */
+  .video {
+    position: relative; aspect-ratio: 16 / 9; width: 100%;
+    background: #0d1013; border: 1px solid var(--line); border-radius: 10px;
+    overflow: hidden; margin: 4px 0 28px;
+    box-shadow: 0 18px 44px -28px rgba(20,23,28,.55);
+  }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  .prose { max-width: 64ch; color: #33383F; margin: 0 0 22px; }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
+  .tag {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.02em;
+    color: var(--navy); background: rgba(30,58,95,.06);
+    border: 1px solid rgba(30,58,95,.14);
+    padding: 5px 10px; border-radius: 6px;
+  }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .fact { background: var(--card); padding: 18px 20px; }
+  .fact .k { font-family: var(--display); font-weight: 600; font-size: 1.35rem; color: var(--ink); line-height: 1.1; }
+  .fact .v { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate); margin-top: 6px; }
+
+  /* ---------- work grid ---------- */
+  .work { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 26px 26px 24px;
+    display: flex; flex-direction: column;
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: 0 20px 40px -30px rgba(20,23,28,.5); }
+  .card h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .card .role { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin: 0 0 12px; }
+  .card p { color: #40454C; font-size: 0.98rem; margin: 0 0 18px; }
+  .card p strong { color: var(--ink); font-weight: 600; }
+  .card .tags { margin-top: auto; margin-bottom: 16px; }
+  .card .tag { font-size: 0.7rem; padding: 4px 9px; }
+  .card .foot { font-family: var(--mono); font-size: 0.8rem; }
+  .card .foot a { border-bottom: 1px solid transparent; transition: border-color .18s ease; }
+  .card .foot a:hover { border-color: var(--navy); }
+  .card .foot .muted { color: var(--slate); }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 60px 0 70px; }
+  .footgrid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; align-items: flex-end; }
+  footer h2 { max-width: 16ch; }
+  .stackline { font-family: var(--mono); font-size: 0.78rem; color: var(--slate); letter-spacing: 0.02em; margin: 22px 0 0; line-height: 1.9; }
+  .copyright { font-family: var(--mono); font-size: 0.72rem; color: var(--slate); margin-top: 40px; letter-spacing: 0.03em; }
+
+  /* ---------- reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 720px) {
+    .work { grid-template-columns: 1fr; }
+    .hero { padding: 48px 0 0; }
+    section { padding: 54px 0; }
+    .topnav a:first-child { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .pulse path { animation: none; stroke-dashoffset: 0; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .links a:hover, .card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="mark">Prem Sharma<span class="dot">.</span></span>
+    <nav class="topnav">
+      <a href="#work">Work</a>
+      <a href="mailto:premar190505@gmail.com">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="eyebrow">Full-Stack &middot; Applied-AI Engineer</p>
+    <h1>Prem Sharma</h1>
+    <p class="thesis">I build production software end to end, from NHS clinical AI to multi-tenant backends.</p>
+    <p class="lead">Computer Science graduate and sole engineer on <strong>KidneyWise</strong>, an NHS clinical AI platform now heading toward clinical trials. I care about clean architecture, applied AI that stays inside its guardrails, and tests that actually hold.</p>
+    <div class="links">
+      <a href="https://github.com/Premar19">GitHub</a>
+      <a href="https://linkedin.com/in/prem-sharma-b258341a9">LinkedIn</a>
+      <a href="mailto:premar190505@gmail.com">Email</a>
+    </div>
+
+    <svg class="pulse" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+      <path pathLength="1" d="M0 30 L120 30 L134 26 L148 30 L168 30 L174 40 L182 6 L190 50 L198 30 L214 30 L226 22 L240 30 L300 30 L420 30 L434 26 L448 30 L468 30 L474 40 L482 6 L490 50 L498 30 L514 30 L526 22 L540 30 L600 30 L720 30 L734 26 L748 30 L768 30 L774 40 L782 6 L790 50 L798 30 L814 30 L826 22 L840 30 L900 30 L1020 30 L1034 26 L1048 30 L1068 30 L1074 40 L1082 6 L1090 50 L1098 30 L1114 30 L1126 22 L1140 30 L1200 30" />
+    </svg>
+  </header>
+
+  <!-- FEATURED: KIDNEYWISE -->
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow" style="margin:0">Featured</p>
+    </div>
+    <h2>KidneyWise</h2>
+    <p class="oneliner">An NHS clinical AI platform for kidney-cancer prehabilitation, built end to end as sole engineer.</p>
+
+    <!-- Replace VIDEO_ID below with your YouTube video ID (the part after watch?v=). Keep the rest of the URL. -->
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="KidneyWise demo walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <p class="prose">A full-stack web and Android app in partnership with Hywel Dda University Health Board (NHS Wales), UWTSD and Aberystwyth University. At its centre is an <strong>AI health chatbot</strong>: a retrieval pipeline over NHS clinical content, with the language model run <strong>on-premise</strong> so patient data never leaves the environment, supporting UK GDPR and NHS information governance. Around it sits real-time clinician-patient messaging, longitudinal heart-rate charts, a guided exercise programme, and role-based access with a safety filter that blocks out-of-scope medical questions.</p>
+
+    <div class="tags">
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Python</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">PostgreSQL / pgvector</span>
+      <span class="tag">Llama 3.1 (Ollama)</span>
+      <span class="tag">Firebase</span>
+      <span class="tag">Capacitor</span>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="k">Sole engineer</div><div class="v">Architecture to release</div></div>
+      <div class="fact"><div class="k">138 tests</div><div class="v">Automated, front and back</div></div>
+      <div class="fact"><div class="k">On-premise LLM</div><div class="v">Data stays in-environment</div></div>
+      <div class="fact"><div class="k">WCRC 2026</div><div class="v">Conference presentation</div></div>
+    </div>
+  </section>
+
+  <!-- OTHER WORK -->
+  <section id="work" class="reveal">
+    <div class="sec-head"><p class="eyebrow" style="margin:0">Selected work</p></div>
+    <h2>More things I've built</h2>
+    <p class="oneliner">Backends, tooling, and experiments where the engineering was the point.</p>
+
+    <div class="work">
+
+      <article class="card">
+        <h3>LinkForge</h3>
+        <p class="role">Multi-tenant SaaS analytics</p>
+        <p>Tenant data isolation enforced in the database with PostgreSQL Row-Level Security. A Redis cache layer <strong>cut p95 redirect latency by ~62%</strong> and more than doubled throughput, validated under k6 load tests and reproduced across independent runs.</p>
+        <div class="tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">PostgreSQL (RLS)</span>
+          <span class="tag">Redis</span>
+          <span class="tag">arq</span>
+          <span class="tag">React / TS</span>
+          <span class="tag">Docker</span>
+        </div>
+        <div class="foot"><span class="muted">Private repo &middot; walkthrough on request</span></div>
+      </article>
+
+      <article class="card">
+        <h3>BugTracker API</h3>
+        <p class="role">Nest.js REST backend</p>
+        <p>A multi-user issue tracker with Passport/JWT auth, <strong>layered authorisation</strong> (role guards plus ownership checks), Prisma and PostgreSQL, filtering and pagination, OpenAPI docs, and 30 Jest tests. Dockerised for one-command setup.</p>
+        <div class="tags">
+          <span class="tag">Nest.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">PostgreSQL (Prisma)</span>
+          <span class="tag">JWT</span>
+          <span class="tag">Jest</span>
+          <span class="tag">Docker</span>
+        </div>
+        <div class="foot"><a href="https://github.com/Premar19/bugtracker-nest-api">github.com/Premar19/bugtracker-nest-api</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Agent Reliability Harness</h3>
+        <p class="role">LLM evaluation tooling</p>
+        <p>Runs an autonomous LLM coding agent against a bug-fixing benchmark in a Docker sandbox, scores every attempt against real test suites, and parses runs into structured metrics. Controlled experiments <strong>raised measured success from 80% to 97%</strong> via failing-test feedback.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Docker</span>
+          <span class="tag">LLM APIs</span>
+          <span class="tag">pytest</span>
+        </div>
+        <div class="foot"><a href="https://github.com/Premar19/mini_swe_project">github.com/Premar19/mini_swe_project</a></div>
+      </article>
+
+      <article class="card">
+        <h3>The approach</h3>
+        <p class="role">How I work</p>
+        <p>I only claim what I've actually built, I write tests that check the property that matters (not just the happy path), and I reach for the right tool rather than the fashionable one. Strongest in <strong>Java</strong> and <strong>TypeScript</strong>, most at home across the full stack.</p>
+        <div class="tags">
+          <span class="tag">Clean architecture</span>
+          <span class="tag">Honest engineering</span>
+          <span class="tag">Testing culture</span>
+        </div>
+        <div class="foot"><span class="muted">Security+ &middot; Azure AI-103 in progress</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footgrid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Open to graduate and junior roles, in the UK and beyond.</h2>
+      </div>
+      <div class="links">
+        <a href="mailto:premar190505@gmail.com">Email</a>
+        <a href="https://github.com/Premar19">GitHub</a>
+        <a href="https://linkedin.com/in/prem-sharma-b258341a9">LinkedIn</a>
+      </div>
+    </div>
+    <p class="stackline">Toolbox &nbsp;/&nbsp; Java &middot; TypeScript &middot; Python &middot; React &middot; Node / Nest.js &middot; FastAPI &middot; PostgreSQL &middot; Redis &middot; Docker &middot; RAG &amp; LLMs</p>
+    <p class="copyright">&copy; 2026 Prem Sharma &middot; Built and deployed by hand.</p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".reveal");
+    if (reduce || !("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
