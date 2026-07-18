@@ -5,12 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Prem Sharma | Full-Stack &amp; Applied-AI Engineer</title>
 <meta name="description" content="Prem Sharma is a full-stack and applied-AI engineer. Sole engineer on KidneyWise, an NHS clinical AI platform, plus multi-tenant backends and LLM reliability tooling." />
-<meta property="og:title" content="Prem Sharma — Full-Stack &amp; Applied-AI Engineer" />
-<meta property="og:description" content="Sole engineer on KidneyWise, an NHS clinical AI platform. Full-stack, applied AI, and honest engineering." />
+<meta property="og:title" content="Prem Sharma, Full-Stack &amp; Applied-AI Engineer" />
+<meta property="og:description" content="Sole engineer on KidneyWise, an NHS clinical AI platform. Full-stack engineering and applied AI." />
 <meta property="og:type" content="website" />
+<meta name="theme-color" content="#F6F5F1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!-- Runs before paint so a returning dark-mode visitor never sees a light flash.
+     Kept inline deliberately: an external file would load too late. -->
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add("js");
+    try {
+      var saved = localStorage.getItem("theme");
+      var dark = saved ? saved === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) root.setAttribute("data-theme", "dark");
+    } catch (e) {}
+  })();
+</script>
 <link rel="stylesheet" href="./styles.css" />
 <script src="./main.js" defer></script>
 </head>
@@ -22,6 +37,7 @@
     <nav class="topnav">
       <a href="#work">Work</a>
       <a href="mailto:premar190505@gmail.com">Contact</a>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark</button>
     </nav>
   </div>
 
@@ -130,7 +146,7 @@
         <div class="tags">
           <span class="tag">Clean architecture</span>
           <span class="tag">Testing culture</span>
-          <span class="tag">Creative Problem Solving</span>
+          <span class="tag">Creative problem solving</span>
         </div>
         <div class="foot"><span class="muted">Security+ &middot; Azure AI-103 in progress</span></div>
       </article>
@@ -151,7 +167,7 @@
         <a href="https://linkedin.com/in/prem-sharma-b258341a9">LinkedIn</a>
       </div>
     </div>
-    <p class="stackline">Toolbox &nbsp;/&nbsp; Java &middot; TypeScript &middot; Python &middot; React &middot; Node / Nest.js &middot; FastAPI &middot; PostgreSQL &middot; Redis &middot; Docker &middot; RAG &amp; LLMs</p>
+    <p class="stackline">Toolbox &nbsp;/&nbsp; Python &middot; TypeScript &middot; Java &middot; React &middot; FastAPI &middot; Node / Nest.js &middot; PostgreSQL &middot; Redis &middot; Docker &middot; RAG &amp; LLMs</p>
     <p class="copyright">&copy; 2026 Prem Sharma &middot; Built and deployed by hand.</p>
   </footer>
 
