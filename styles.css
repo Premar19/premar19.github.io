@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Prem Sharma — portfolio styles
+   Prem Sharma: portfolio styles
    1. Tokens
    2. Base & resets
    3. Layout primitives
@@ -23,9 +23,34 @@
   --slate: #5A616B;
   --line: #E3E1D9;
   --card: #FBFAF7;
+  --prose: #33383F;
+  --prose-card: #40454C;
+  --tag-bg: rgba(30, 58, 95, .06);
+  --tag-line: rgba(30, 58, 95, .14);
+  --shadow: rgba(20, 23, 28, .5);
   --display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+
+/* Dark theme. Applied by assets/js/main.js as <html data-theme="dark">.
+   Same token names, new values, so no component rule needs to change. */
+[data-theme="dark"] {
+  --ink: #ECEAE4;
+  --paper: #101317;
+  --navy: #8AB0DE;
+  --navy-bright: #A9C6EC;
+  --teal: #4FB8AC;
+  --slate: #98A1AD;
+  --line: #262B33;
+  --card: #171B21;
+  --prose: #C7CBD2;
+  --prose-card: #B4BAC3;
+  --tag-bg: rgba(138, 176, 222, .10);
+  --tag-line: rgba(138, 176, 222, .22);
+  --shadow: rgba(0, 0, 0, .6);
+  color-scheme: dark;
 }
 
 /* 2. Base & resets ------------------------------------------------------ */
@@ -41,6 +66,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color .25s ease, color .25s ease;
 }
 
 a { color: var(--navy); text-decoration: none; }
@@ -92,6 +118,24 @@ button:focus-visible {
   letter-spacing: 0.04em;
 }
 .topnav a:hover { color: var(--ink); }
+
+.theme-toggle {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--slate);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin-left: 22px;
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--navy); }
+
+/* No JS means no working toggle, so hide it rather than show a dead control. */
+html:not(.js) .theme-toggle { display: none; }
 
 /* 5. Hero --------------------------------------------------------------- */
 .hero { padding: 64px 0 60px; }
@@ -149,7 +193,7 @@ h2 {
 
 .oneliner { color: var(--slate); font-size: 1.1rem; margin: 6px 0 26px; max-width: 62ch; }
 
-.prose { max-width: 64ch; color: #33383F; margin: 0 0 22px; }
+.prose { max-width: 64ch; color: var(--prose); margin: 0 0 22px; }
 .prose strong { color: var(--ink); font-weight: 600; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
@@ -159,8 +203,8 @@ h2 {
   font-size: 0.74rem;
   letter-spacing: 0.02em;
   color: var(--navy);
-  background: rgba(30, 58, 95, .06);
-  border: 1px solid rgba(30, 58, 95, .14);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-line);
   padding: 5px 10px;
   border-radius: 6px;
 }
@@ -221,7 +265,7 @@ h2 {
 .card:hover {
   border-color: var(--navy);
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px -30px rgba(20, 23, 28, .5);
+  box-shadow: 0 20px 40px -30px var(--shadow);
 }
 
 .card h3 {
@@ -239,7 +283,7 @@ h2 {
   color: var(--teal);
   margin: 0 0 12px;
 }
-.card p { color: #40454C; font-size: 0.98rem; margin: 0 0 18px; }
+.card p { color: var(--prose-card); font-size: 0.98rem; margin: 0 0 18px; }
 .card p strong { color: var(--ink); font-weight: 600; }
 .card .tags { margin-top: auto; margin-bottom: 16px; }
 .card .tag { font-size: 0.7rem; padding: 4px 9px; }
